@@ -1,9 +1,0 @@
-[36m[1mi  emulators:[22m[39m Starting emulators: auth, functions, firestore, hosting, storage
-[36m[1mi  emulators:[22m[39m Shutting down emulators.
-
-[1m[31mError:[39m[22m No project active, but project aliases are available.
-
-Run [1mfirebase use <alias>[22m with one of these options:
-
-  staging (parent-payback)
-  default (parent-payback)

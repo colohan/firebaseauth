@@ -1,7 +1,7 @@
 {
   "projects": {
-    "staging": "parent-payback",
-    "default": "parent-payback"
+    "staging": "XXX",
+    "default": "XXX"
   },
   "targets": {},
   "etags": {}
