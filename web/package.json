@@ -1,0 +1,37 @@
+{
+  "name": "xxx",
+  "version": "0.0.1",
+  "description": "[XXX](https://www.xxx.com)",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch --progress",
+    "visualize-bundle": "webpack --analyze"
+  },
+  "author": "Chris Colohan",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "eslint": "^8.35.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "extract-loader": "^0.0.2",
+    "file-loader": "^6.2.0",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@material/button": "^14.0.0",
+    "@material/menu": "^14.0.0",
+    "@material/tab-bar": "^14.0.0",
+    "@material/top-app-bar": "^14.0.0",
+    "firebase": "^9.0.0",
+    "firebase-admin": "^11.6.0"
+  }
+}

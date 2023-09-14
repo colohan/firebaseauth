@@ -1,0 +1,465 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+html,
+body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 16px;
+}
+
+html,
+body,
+.spinner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 0.5s;
+}
+
+.mdl-spinner {
+  height: 100px;
+  width: 100px;
+}
+
+.spinner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  z-index: 9;
+}
+
+.tab_content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.xxx-layout .mdl-layout__header .mdl-layout__drawer-button {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.xxx-drawer {
+  border: none;
+}
+
+/* iOS Safari specific workaround */
+.xxx-drawer .mdl-menu__container {
+  z-index: -1;
+}
+
+.xxx-drawer .xxx-navigation {
+  z-index: -2;
+}
+
+/* END iOS Safari specific workaround */
+.xxx-drawer .mdl-menu .mdl-menu__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.xxx-drawer-header {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+#school_dropdown {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.xxx-navigation {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.mdl-layout__drawer .xxx-navigation .tab {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+}
+
+.xxx-layout .xxx-navigation .mdl-navigation__link:hover {
+  background-color: #00BCD4;
+  color: #37474F;
+}
+
+.xxx-navigation .mdl-navigation__link i {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 16px;
+}
+
+.xxx-cards {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.xxx-cards .xxx-separator {
+  height: 32px;
+}
+
+.xxx-cards .mdl-card__title.mdl-card__title {
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.xxx-cards ul {
+  padding: 0;
+}
+
+.xxx-cards h3 {
+  font-size: 1em;
+}
+
+.xxx-updates .mdl-card__title {
+  background-image: url('../images/dog.png');
+  background-position: 90% 100%;
+  background-repeat: no-repeat;
+}
+
+.xxx-cards .mdl-card__actions a {
+  color: #00BCD4;
+  text-decoration: none;
+}
+
+.xxx-options h3 {
+  margin: 0;
+}
+
+.xxx-options .mdl-checkbox__box-outline {
+  border-color: rgba(255, 255, 255, 0.89);
+}
+
+.xxx-options ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.xxx-options li {
+  margin: 4px 0;
+}
+
+.xxx-options .material-icons {
+  color: rgba(255, 255, 255, 0.89);
+}
+
+.xxx-options .mdl-card__actions {
+  height: 64px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#user-container {
+  display: flex;
+  align-items: center;
+}
+
+#user-container #user-pic {
+  top: -3px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+#user-container #user-name {
+  font-size: 16px;
+  line-height: 36px;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+#user-container #user-name .material-symbols-outlined {
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+#title {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.padabove {
+  padding-top: 30px;
+}
+
+#drop_zone {
+  width: 100%;
+}
+
+#submit-notes {
+  width: 100%;
+}
+
+#submit-notes_input {
+  width: 100%;
+}
+
+.approve-toptable {
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+#approve-receipt_table_div {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#expense_list-change_columns_button {
+  margin-bottom: 15px;
+}
+
+.show {
+  width: auto;
+  padding-right: 20px;
+}
+
+/*
+.xxx-layout .xxx-navigation .tab {
+    display: none;
+}
+.tabcontent {
+    display: none;
+}
+*/
+
+#mediaCapture {
+  display: none;
+}
+
+.receipt_filename_width {
+  width: 100px;
+  padding: 0;
+}
+
+.receipt_amount_width {
+  width: 100px;
+  padding: 0;
+}
+
+.receipt_description_width {
+  width: 100%;
+}
+
+.receipt_trash {
+  width: 24px;
+  padding: 0;
+}
+
+/* A kludge to allow textfields in tables to have less vertical and horizontal
+ * padding for a more compact table: */
+ .reduce_textfield_padding {
+  padding: 0;
+}
+
+.reduce_textfield_padding .mdl-textfield__label {
+  top: 4px;
+}
+
+.reduce_textfield_padding .mdl-textfield__label:after {
+  bottom: 0px;
+}
+
+.reduce_textfield_padding_error {
+  padding-bottom: 10px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.reduce_textfield_padding_error .mdl-textfield__label {
+  top: 4px;
+}
+
+.reduce_textfield_padding_error .mdl-textfield__label:after {
+  bottom: 10px;
+}
+
+.mdl-data-table .receipt_td {
+  padding: 10px;
+}
+
+/* Make the whole table as large as possible and spaced down a bit from the
+ * drop-zone above it: */
+.receipt_div {
+  padding-top: 20px;
+}
+
+.receipt_table {
+  width: 100%;
+}
+
+.tab_pane {
+  width: 100%;
+}
+
+.center_table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_text {
+  text-align: center;
+}
+
+.totals_table_num {
+  width: 75px;
+}
+
+.totals_table_num .mdl-textfield__error {
+  width: 180px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#submit-drop_receipts {
+  margin-top: 20px;
+}
+
+.totals_div {
+  margin-top: 20px;
+}
+
+#approve-change_budget_div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.approve-buttons {
+  margin-top: -10px;
+}
+
+#submit_button {
+  margin-top: 20px;
+}
+
+.center_progress {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#submit-address_street_div {
+  width: 300px;
+}
+
+#submit-address_city_div {
+  width: 160px;
+}
+
+#submit-address_state_div {
+  width: 70px;
+}
+
+#submit-address_zip_div {
+  width: 63px;
+}
+
+.note_name {
+  font-weight: bold;
+}
+
+#sign-in-button {
+  text-align: center;
+}
+
+#change_budget {
+  width: 400px;
+}
+
+#expense_list-table_div {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.printonly {
+  display: none;
+}
+
+.signatureline {
+  width: 70%;
+  border-bottom: 1px solid black;
+  height: 30px;
+}
+.signaturelabel {
+  padding-top: 50px;
+  align: right;
+}
+
+#expense_list-print_button_div {
+  padding-bottom: 15px;
+}
+
+.firebase-emulator-warning {
+  display: none;
+}

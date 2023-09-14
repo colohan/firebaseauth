@@ -1,0 +1,7 @@
+{
+  "name": "XXX",
+  "short_name": "X",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
